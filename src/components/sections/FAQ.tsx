@@ -35,7 +35,7 @@ const FAQ: FAQItem[] = [
 
 export default function FAQSection() {
   return (
-    <Section id="faq" tone="soft">
+    <Section id="faq" tone="soft" fade="both">
       <div className="flex items-end justify-between gap-6 flex-wrap">
         <div>
           <h2 className="text-2xl md:text-4xl font-semibold text-gray-900">

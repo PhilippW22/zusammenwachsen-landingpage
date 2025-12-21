@@ -58,7 +58,7 @@ function Badge({ children }: { children: React.ReactNode }) {
 
 export default function Testimonials() {
   return (
-    <Section id="testimonials" tone="soft">
+    <Section id="testimonials" tone="soft" fade="both">
       <div className="flex items-end justify-between gap-6 flex-wrap">
         <div>
           <h2 className="text-2xl md:text-4xl font-semibold text-gray-900">

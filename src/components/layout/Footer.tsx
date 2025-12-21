@@ -3,6 +3,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer
+    id="site-footer"
       className="mt-20 mb-6 text-sm text-gray-500 text-center px-4"
       role="contentinfo"
       aria-label="Webseiteninfos und rechtliche Links"

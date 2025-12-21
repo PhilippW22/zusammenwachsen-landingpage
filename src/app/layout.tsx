@@ -3,7 +3,7 @@ import "./globals.css";
 import { siteConfig } from "@/lib/site-config";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
-import MobileNav from "@/components/layout/MobileNav";
+import MobileBottomBar from "@/components/layout/MobileBottomBar";
 
 
 export const metadata: Metadata = {
@@ -39,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="de">
       <body>
-        <MobileNav />
+        <MobileBottomBar />
         <div className="pt-16">{children}</div>
         <Footer />
       </body>

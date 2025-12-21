@@ -1,23 +1,28 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import { siteConfig } from "@/lib/site-config";
 import Section from "@/components/ui/Section";
-import Card from "@/components/ui/Card";
 import { ButtonLink } from "@/components/ui/Button";
 
 export default function Hero() {
-  const [showAnimation, setShowAnimation] = useState(true);
-
-  useEffect(() => {
-    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (media.matches) setShowAnimation(false);
-  }, []);
-
   return (
-    <Section id="top" className="pt-20 md:pt-24" tone="soft" containerSize="wide">
-      <div className="grid items-center gap-10 lg:grid-cols-2">
+    <Section
+      id="top"
+      tone="soft"
+      containerSize="wide"
+      fade="bottom"
+      className="
+    pt-20 md:pt-24
+    bg-[url('/assets/bg/hero-gradient.webp')]
+    bg-no-repeat
+    bg-cover
+    bg-[position:50%_20%]
+    md:bg-[position:80%_35%]
+  "
+    >
+      <div className="grid items-center gap-12 lg:grid-cols-2">
+        {/* Text */}
         <div>
           <p className="text-sm font-medium text-gray-700">
             ZusammenWachsen – dein Familienratgeber
@@ -43,23 +48,24 @@ export default function Hero() {
           <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-600">
             <span>• 320+ Themen</span>
             <span>• 12 Kategorien</span>
-            <span>• Favoriten, Suche, Teilen</span>
+            <span>• Über 2.500 Impulse</span>
           </div>
         </div>
 
-        {showAnimation && (
-          <Card className="overflow-hidden p-2 md:p-3">
-            <Image
-              src="/assets/animation/app-preview.gif"
-              alt="ZusammenWachsen App Vorschau"
-              width={900}
-              height={1800}
-              className="w-full h-auto rounded-xl"
-              priority
-              unoptimized
-            />
-          </Card>
-        )}
+        {/* App Mockup */}
+        <div className="flex justify-center lg:justify-end">
+  <div className="w-full max-w-[260px] sm:max-w-[300px] md:max-w-[340px] lg:max-w-[360px]">
+    <Image
+      src="/assets/screenshots/app-hero2.png"
+      alt="ZusammenWachsen App – Vorschau"
+      width={1200}
+      height={1800}
+      className="w-full h-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.08)]"
+      priority
+    />
+  </div>
+</div>
+        
       </div>
     </Section>
   );
