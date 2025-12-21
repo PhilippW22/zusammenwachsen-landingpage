@@ -72,7 +72,7 @@ export default function FeatureShowcase() {
           const reverse = idx % 2 === 1;
 
           return (
-            <Card key={item.title} className="p-6 md:p-8">
+            <Card key={item.title} variant="gradient" className="p-6 md:p-8">
               <div
                 className={cn(
                   "grid items-center gap-8 lg:grid-cols-2",
@@ -96,6 +96,7 @@ export default function FeatureShowcase() {
                       alt={item.image.alt}
                       width={900}
                       height={1800}
+                      loading="lazy"
                       className="w-full h-auto rounded-2xl border"
                     />
                   </div>

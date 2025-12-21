@@ -3,7 +3,7 @@ import "./globals.css";
 import { siteConfig } from "@/lib/site-config";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
-import MobileBottomBar from "@/components/layout/MobileBottomBar";
+import BottomNavBar from "@/components/layout/BottomNavBar";
 
 
 export const metadata: Metadata = {
@@ -29,6 +29,20 @@ export const metadata: Metadata = {
       },
     ],
   },
+  icons: {
+    icon: [
+      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180' },
+    ],
+  },
+  appleWebApp: {
+    title: 'ZusammenWachsen',
+  },
+  manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({
@@ -39,7 +53,7 @@ export default function RootLayout({
   return (
     <html lang="de">
       <body>
-        <MobileBottomBar />
+        <BottomNavBar />
         <div className="pt-16">{children}</div>
         <Footer />
       </body>

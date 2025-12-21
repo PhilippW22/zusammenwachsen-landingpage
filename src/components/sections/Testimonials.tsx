@@ -68,15 +68,14 @@ export default function Testimonials() {
             Kurze Auszüge aus Bewertungen — später ersetzt du die Dummy-Texte durch deine echten App-Store-Reviews.
           </p>
         </div>
-
         <Badge>★★★★★ im App Store</Badge>
       </div>
 
       <div className="mt-10 grid gap-4 md:grid-cols-3">
         {TESTIMONIALS.map((t, idx) => (
-          <Card key={idx} className="p-6">
+          <Card key={idx} variant="gradient" className="p-6">
             <Stars rating={t.rating} />
-            <p className="mt-4 text-gray-800 leading-relaxed">“{t.quote}”</p>
+            <p className="mt-4 text-gray-800 leading-relaxed">"{t.quote}"</p>
             <div className="mt-5 text-sm text-gray-600">
               <span className="font-medium text-gray-900">{t.name}</span>
               <span className="mx-2 text-gray-300">•</span>

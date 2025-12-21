@@ -13,14 +13,14 @@ const NAV_ITEMS: NavItem[] = [
   { href: "/#faq", label: "FAQ" },
 ];
 
-export default function MobileBottomBar() {
-  // ✅ Tuning: so erscheint die Bar "früher"
-  const SHOW_AFTER_PX = 80; // kleiner = früher sichtbar beim Runterscrollen
-  const HIDE_AT_TOP_PX = 20; // ausblenden ganz oben im Hero
+// Scroll-Konfiguration
+const SCROLL_CONFIG = {
+  SHOW_AFTER_PX: 80,
+  HIDE_AT_TOP_PX: 20,
+  FOOTER_HIDE_OFFSET: 40,
+} as const;
 
-  // Footer-Hide: wenn Footer im Viewport auftaucht, Bar ausblenden
-  const FOOTER_HIDE_OFFSET = 40;
-
+export default function BottomNavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -31,7 +31,7 @@ export default function MobileBottomBar() {
       const y = window.scrollY || 0;
 
       // 1) ganz oben ausblenden (Hero)
-      if (y <= HIDE_AT_TOP_PX) {
+      if (y <= SCROLL_CONFIG.HIDE_AT_TOP_PX) {
         setIsVisible(false);
         setIsOpen(false);
         return;
@@ -41,7 +41,8 @@ export default function MobileBottomBar() {
       const footer = document.querySelector("footer");
       if (footer) {
         const rect = footer.getBoundingClientRect();
-        const footerIsVisible = rect.top < window.innerHeight - FOOTER_HIDE_OFFSET;
+        const footerIsVisible =
+          rect.top < window.innerHeight - SCROLL_CONFIG.FOOTER_HIDE_OFFSET;
 
         if (footerIsVisible) {
           setIsVisible(false);
@@ -51,7 +52,7 @@ export default function MobileBottomBar() {
       }
 
       // 3) sonst abhängig von Scroll-Position einblenden
-      setIsVisible(y >= SHOW_AFTER_PX);
+      setIsVisible(y >= SCROLL_CONFIG.SHOW_AFTER_PX);
     };
 
     onScroll();
@@ -76,7 +77,7 @@ export default function MobileBottomBar() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 14 }}
           transition={{ duration: 0.18 }}
-          className="fixed inset-x-0 bottom-4 z-50 md:hidden"
+          className="fixed inset-x-0 bottom-4 z-50"
         >
           {/* Outer container centered */}
           <div className="mx-auto w-fit px-4">
@@ -87,32 +88,39 @@ export default function MobileBottomBar() {
               className="
                 flex items-center gap-2
                 rounded-full
-                bg-[#1f1f1f]/90
-                backdrop-blur
+                bg-brand-primary/50           // ← Viel transparenter!
+                backdrop-blur-md              // ← Stärkerer Blur
+                border border-white/30        // ← Subtiler Border für Glass-Look
                 shadow-lg
                 px-2 py-2
                 scale-[0.8]
-                origin-center
-              "
+                origin-center 
+                "
               role="navigation"
               aria-label="Mobile Schnellnavigation"
             >
-              {/* Download pill */}
+              {/* Download button: Text wenn geschlossen, Icon wenn offen */}
               <a
                 href={siteConfig.androidStoreUrl}
                 className="
                   inline-flex items-center justify-center
                   rounded-full
-                  bg-white
-                  px-6 py-3
-                  text-sm font-semibold text-gray-900
-                  hover:opacity-90
-                  transition-opacity
+                  bg-gradient-to-r from-white to-gray-200     // ← Gradient von weiß nach grau
+                  text-gray-900
+                  hover:scale-95                               // ← Verkleinert sich beim Hover
+                  transition-all duration-200 ease-in-out      // ← Smooth Animation
                   whitespace-nowrap
+                  font-bold
+                  shadow-sm
                 "
-                aria-label="Download (Play Store)"
+                style={{
+                  width: isOpen ? "48px" : "auto",
+                  height: "48px",
+                  padding: isOpen ? "0" : "0 24px",
+                }}
+                aria-label={isOpen ? "Download App" : "Download (Play Store)"}
               >
-                Download
+                {isOpen ? <DownloadIcon /> : "Download"}
               </a>
 
               {/* Middle nav only when open */}
@@ -133,12 +141,12 @@ export default function MobileBottomBar() {
                           href={item.href}
                           onClick={close}
                           className="
-                            text-sm font-semibold
-                            text-white/85
-                            hover:text-white
-                            transition-colors
-                            whitespace-nowrap
-                          "
+    text-sm font-bold
+    text-ui-surface-dark-2                   // ← Dunkel & Fett für max. Kontrast
+    hover:text-gray-700
+    transition-colors
+    whitespace-nowrap
+  "
                         >
                           {item.label}
                         </Link>
@@ -162,6 +170,8 @@ export default function MobileBottomBar() {
                   text-white
                   hover:bg-[#333333]
                   transition-colors
+                  flex-shrink-0
+                  cursor-pointer
                 "
               >
                 {!isOpen ? <BurgerIcon /> : <CloseIcon />}
@@ -171,6 +181,26 @@ export default function MobileBottomBar() {
         </motion.div>
       )}
     </AnimatePresence>
+  );
+}
+
+function DownloadIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <polyline points="7 10 12 15 17 10" />
+      <line x1="12" y1="15" x2="12" y2="3" />
+    </svg>
   );
 }
 
