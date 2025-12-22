@@ -1,23 +1,12 @@
 import Section from "@/components/ui/Section";
 import Card from "@/components/ui/Card";
-import ValuesSlideshow from "./ValuesSlideshow";
+import Reveal from "../motion/Reveal";
+import AnimatedCounter from "@/components/motion/AnimatedCounter";
 
 const STATS = [
-  {
-    number: "320+",
-    label: "Alltagsthemen",
-    detail: "in 12 Kategorien",
-  },
-  {
-    number: "2.500+",
-    label: "Impulse",
-    detail: "mit Beispielsätzen",
-  },
-  {
-    number: "100%",
-    label: "Kostenlos",
-    detail: "ohne Werbung",
-  },
+  { end: 320, suffix: "+", label: "Alltagsthemen", detail: "in 12 Kategorien" },
+  { end: 2500, suffix: "+", label: "Impulse", detail: "mit Beispielsätzen" },
+  { end: 100, suffix: "%", label: "Kostenlos", detail: "ohne Werbung" },
 ] as const;
 
 export default function Features() {
@@ -35,22 +24,27 @@ export default function Features() {
 
       {/* Stats Grid */}
       <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 max-w-4xl mx-auto">
-        {STATS.map((stat) => (
-          <Card key={stat.label} variant="gradient" className="text-center p-6 md:p-8">
-            <div className="text-3xl md:text-4xl font-bold text-[#c0897f]">
-              {stat.number}
-            </div>
-            <div className="mt-2 text-base md:text-lg font-semibold text-gray-900">
-              {stat.label}
-            </div>
-            <div className="mt-1 text-sm text-gray-600">{stat.detail}</div>
-          </Card>
+        {STATS.map((stat, i) => (
+          <Reveal
+            key={stat.label}
+            direction="up"
+            delay={i * 0.06}
+            className="h-full"
+          >
+            <Card variant="gradient" className="text-center p-6 md:p-8 h-full">
+              <AnimatedCounter
+                end={stat.end} 
+                suffix={stat.suffix}
+                duration={2000}
+                className="text-3xl md:text-4xl font-bold text-[#c0897f]"
+              />
+              <div className="mt-2 text-base md:text-lg font-semibold text-gray-900">
+                {stat.label}
+              </div>
+              <div className="mt-1 text-sm text-gray-600">{stat.detail}</div>
+            </Card>
+          </Reveal>
         ))}
-      </div>
-
-      {/* Values Slideshow */}
-      <div className="mt-12">
-        <ValuesSlideshow />
       </div>
     </Section>
   );

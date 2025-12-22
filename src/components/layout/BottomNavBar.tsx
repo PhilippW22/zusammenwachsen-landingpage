@@ -84,7 +84,7 @@ export default function BottomNavBar() {
             {/* Bar */}
             <motion.div
               layout
-              transition={{ type: "spring", stiffness: 520, damping: 38 }}
+              transition={{ type: "spring", stiffness: 260, damping: 26, mass: 0.9 }}
               className="
                 flex items-center gap-2
                 rounded-full
@@ -100,7 +100,7 @@ export default function BottomNavBar() {
               aria-label="Mobile Schnellnavigation"
             >
               {/* Download button: Text wenn geschlossen, Icon wenn offen */}
-              <a
+              <motion.a
                 href={siteConfig.androidStoreUrl}
                 className="
                   inline-flex items-center justify-center
@@ -121,40 +121,46 @@ export default function BottomNavBar() {
                 aria-label={isOpen ? "Download App" : "Download (Play Store)"}
               >
                 {isOpen ? <DownloadIcon /> : "Download"}
-              </a>
+              </motion.a>
 
-              {/* Middle nav only when open */}
-              <AnimatePresence initial={false}>
-                {isOpen && (
-                  <motion.div
-                    key="nav"
-                    initial={{ opacity: 0, width: 0 }}
-                    animate={{ opacity: 1, width: "auto" }}
-                    exit={{ opacity: 0, width: 0 }}
-                    transition={{ duration: 0.18 }}
-                    className="overflow-hidden"
-                  >
-                    <div className="flex items-center gap-5 px-3">
-                      {navItems.map((item) => (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          onClick={close}
-                          className="
-    text-sm font-bold
-    text-ui-surface-dark-2                   // ← Dunkel & Fett für max. Kontrast
-    hover:text-gray-700
-    transition-colors
-    whitespace-nowrap
-  "
-                        >
-                          {item.label}
-                        </Link>
-                      ))}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              {/* Middle nav (immer gerendert, smooth reveal) */}
+<motion.div
+  className="overflow-hidden"
+  initial={false}
+  animate={{
+    maxWidth: isOpen ? 260 : 0,
+    opacity: isOpen ? 1 : 0,
+  }}
+  transition={{
+    duration: 0.85,
+    ease: [0.16, 1, 0.3, 1], // "easeOutCubic"-Feeling
+  }}
+>
+  <motion.div
+    initial={false}
+    animate={{ x: isOpen ? 0 : -8 }}
+    transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+  >
+    <div className="flex items-center gap-5 px-3">
+      {navItems.map((item) => (
+        <Link
+          key={item.href}
+          href={item.href}
+          onClick={close}
+          className="
+            text-sm font-bold
+            text-white/85
+            hover:text-white
+            transition-colors
+            whitespace-nowrap
+          "
+        >
+          {item.label}
+        </Link>
+      ))}
+    </div>
+  </motion.div>
+</motion.div>
 
               {/* Right button: burger or X */}
               <button

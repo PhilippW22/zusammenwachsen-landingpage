@@ -12,28 +12,28 @@ type FAQItem = {
 
 const FAQ: FAQItem[] = [
   {
-    q: "Wie lang sind die Inhalte?",
-    a: "Kurz und alltagstauglich – so, dass du sie auch zwischen Tür und Angel nutzen kannst.",
+    q: "Wer steckt hinter ZusammenWachsen?",
+    a: "Wir sind Michèle und Philipp – Eltern einer kleinen Tochter. Michèle ist Pädagogin, Philipp App-Entwickler. Aus dem Wunsch heraus, Eltern im Alltag liebevoll, ehrlich und ohne Druck zu stärken, ist ZusammenWachsen entstanden.",
   },
   {
-    q: "Für welches Alter ist die App gedacht?",
-    a: "Für Familien von Baby bis Teenager – die Themen sind entsprechend vielfältig.",
+    q: "Warum gibt es diese App?",
+    a: "Im Familienalltag bleibt oft wenig Zeit für lange Ratgeber. ZusammenWachsen sammelt verlässliche, kurze Impulse – verständlich, alltagsnah und ohne Bewertung, aber mit klarer Haltung.",
   },
   {
-    q: "Gibt es eine Suchfunktion?",
-    a: "Ja. Du kannst gezielt nach Themen oder Situationen suchen, wenn du schnell etwas brauchst.",
+    q: "Was ist euch bei den Inhalten wichtig?",
+    a: "Wir möchten Bezugspersonen in ihrer Intuition bestärken. Nicht sagen, was du nicht tun sollst – sondern Anregungen geben, was du in herausfordernden Situationen konkret tun kannst.",
   },
   {
-    q: "Kann ich Inhalte speichern?",
-    a: "Ja. Mit Favoriten/Merkliste findest du deine wichtigsten Impulse jederzeit wieder.",
+    q: "Was macht ZusammenWachsen besonders?",
+    a: "Du findest über 320 Alltagsthemen in 12 Kategorien – mit kurzen Impulsen und Beispielsätzen, die du direkt anwenden kannst. Die Inhalte sind inspiriert von bindungs- und bedürfnisorientierter Begleitung, gewaltfreier Kommunikation und selbstbestimmtem Lernen.",
   },
   {
-    q: "Kann ich Impulse teilen?",
-    a: "Ja. Inhalte lassen sich direkt mit Freund*innen oder Familie teilen.",
+    q: "Was kostet die App?",
+    a: "Nichts. ZusammenWachsen ist kostenlos, werbefrei und ohne Anmeldung nutzbar – damit stärkende Impulse für alle zugänglich sind.",
   },
   {
-    q: "Kommen neue Inhalte dazu?",
-    a: "Ja. Die App wächst regelmäßig mit neuen Themen und Impulsen weiter.",
+    q: "Wie kannst du uns unterstützen?",
+    a: "Wenn dir die App hilft, freuen wir uns über eine Bewertung im App Store / Play Store, eine Empfehlung an Freund*innen – oder einen freiwilligen finanziellen Beitrag. So wächst ZusammenWachsen mit euch weiter.",
   },
 ];
 
@@ -108,7 +108,7 @@ export default function FAQSection() {
             FAQ
           </h2>
           <p className="mt-3 text-base md:text-lg text-gray-700 leading-relaxed max-w-2xl">
-            Antworten auf häufige Fragen – kurz, klar und ohne Umwege.
+            Kurz erklärt: Haltung, Hintergründe und warum ZusammenWachsen im Alltag unterstützt.
           </p>
         </div>
       </div>

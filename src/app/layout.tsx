@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { siteConfig } from "@/lib/site-config";
 import Footer from "@/components/layout/Footer";
-import Header from "@/components/layout/Header";
 import BottomNavBar from "@/components/layout/BottomNavBar";
 
 
@@ -54,7 +53,7 @@ export default function RootLayout({
     <html lang="de">
       <body>
         <BottomNavBar />
-        <div className="pt-16">{children}</div>
+        <div>{children}</div>
         <Footer />
       </body>
     </html>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Section from "@/components/ui/Section";
 import Card from "@/components/ui/Card";
 import { cn } from "@/lib/cn";
+import Reveal from "../motion/Reveal";
 
 type ShowcaseItem = {
   title: string;
@@ -12,30 +13,39 @@ type ShowcaseItem = {
 
 const SHOWCASE: ShowcaseItem[] = [
   {
-    title: "Schnell finden mit Suche",
-    text: "Wenn es im Alltag gerade brennt: Suche nach Themen und finde in Sekunden passende Impulse.",
-    bullets: ["Schnelle Orientierung", "Gezielt nach Situationen suchen"],
+    title: "Mehr als 320 Themen in 12 Kategorien",
+    text: "Von Alltag & Routinen bis Sicherheit & Prävention: übersichtlich strukturierte Impulse für den Familienalltag.",
+    bullets: [
+      "Bindungs- und bedürfnisorientiert",
+      "Gewaltfreie Kommunikation",
+    ],
     image: {
-      src: "/assets/screenshots/shot-3.png",
+      src: "/assets/screenshots/shot-1.png",
+      alt: "ZusammenWachsen – Überblick über Themen und Kategorien",
+    },
+  },
+  {
+    title: "Schnell finden mit der Suche",
+    text: "Wenn es im Alltag gerade brennt: Suche gezielt nach Themen oder Situationen und finde in Sekunden passende Impulse.",
+    bullets: [
+      "Schnelle Orientierung im Alltag",
+      "Gezielte Suche nach konkreten Situationen",
+    ],
+    image: {
+      src: "/assets/screenshots/shot-2.png",
       alt: "ZusammenWachsen – Suche und Filter",
     },
   },
   {
-    title: "Favoriten speichern",
-    text: "Speichere deine wichtigsten Impulse in der Merkliste und finde sie jederzeit wieder.",
-    bullets: ["Merkliste für deine Favoriten", "Wiederfinden ohne langes Suchen"],
+    title: "Favoriten speichern & wiederfinden",
+    text: "Speichere deine wichtigsten Impulse in der Merkliste und greife jederzeit darauf zurück – ganz ohne langes Suchen.",
+    bullets: [
+      "Persönliche Merkliste für wichtige Impulse",
+      "Schnell wiederfinden, wenn es darauf ankommt",
+    ],
     image: {
-      src: "/assets/screenshots/shot-2.png",
+      src: "/assets/screenshots/shot-3.png",
       alt: "ZusammenWachsen – Impulse und Favoriten",
-    },
-  },
-  {
-    title: "Impuls teilen",
-    text: "Teile stärkende Inhalte direkt mit Freund*innen oder Familie – wenn es gerade passt.",
-    bullets: ["Direkt aus der App teilen", "Für Unterstützung im Umfeld"],
-    image: {
-      src: "/assets/screenshots/shot-1.png",
-      alt: "ZusammenWachsen – Inhalte teilen",
     },
   },
 ];
@@ -70,8 +80,10 @@ export default function FeatureShowcase() {
       <div className="mt-10 space-y-6">
         {SHOWCASE.map((item, idx) => {
           const reverse = idx % 2 === 1;
+          const direction = idx % 2 === 0 ? "right" : "left"; // 1 rechts, 2 links, 3 rechts
 
           return (
+            <Reveal key={item.title} direction={direction} delay={idx * 0.06}>
             <Card key={item.title} variant="gradient" className="p-6 md:p-8">
               <div
                 className={cn(
@@ -103,6 +115,7 @@ export default function FeatureShowcase() {
                 </div>
               </div>
             </Card>
+            </Reveal>
           );
         })}
       </div>
