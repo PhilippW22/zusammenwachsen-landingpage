@@ -182,7 +182,7 @@ export default function Testimonials() {
                 exit={{ opacity: 0, x: direction > 0 ? -300 : 300 }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
               >
-                <Card variant="gradient" className="p-6 sm:p-8 md:p-10 text-center">
+                <Card variant="gradient" className="p-6 sm:p-8 md:p-10 text-center min-h-[340px] sm:min-h-[360px] md:min-h-[380px] flex flex-col justify-center">
                   <Stars rating={currentTestimonial.rating} />
                   
                   <p className="mt-5 sm:mt-6 text-base sm:text-lg md:text-xl text-gray-800 leading-relaxed italic">
