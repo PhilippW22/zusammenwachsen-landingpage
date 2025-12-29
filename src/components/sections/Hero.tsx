@@ -23,18 +23,16 @@ export default function Hero() {
       <div className="grid items-center gap-12 lg:grid-cols-2">
         {/* Text */}
         <div>
-          {/* App-Name prominent + responsiv + darf umbrechen */}
           <p className="text-base sm:text-lg font-semibold tracking-tight text-gray-900">
             <span className="break-words">ZusammenWachsen</span>
             <span className="text-gray-700"> – dein Familienratgeber</span>
           </p>
 
-          {/* Claim bleibt groß (Value Proposition) */}
           <h1 className="mt-3 text-4xl md:text-6xl font-semibold tracking-tight text-gray-900">
             Kurze, liebevolle Impulse für den Familienalltag.
           </h1>
 
-          {/* Store Badges - optimiert */}
+          {/* Store Badges */}
           <div className="mt-8 flex items-center gap-3">
             <a
               href={siteConfig.androidStoreUrl}

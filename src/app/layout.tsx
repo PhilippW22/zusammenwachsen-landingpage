@@ -72,7 +72,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // Structured Data - Sauber und korrekt
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "MobileApplication",
@@ -89,7 +88,6 @@ export default function RootLayout({
       siteConfig.iosStoreUrl,
       siteConfig.androidStoreUrl
     ],
-    // Store URLs als sameAs (korrekte Schema.org Verwendung)
     sameAs: [
       siteConfig.iosStoreUrl,
       siteConfig.androidStoreUrl,

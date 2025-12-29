@@ -17,7 +17,6 @@ const base =
 
 const variants: Record<ButtonVariant, string> = {
   primary: "bg-gray-900 text-white hover:bg-gray-800",
-  // Akzent sparsam: nur Border/Hover in deiner Farbe
   secondary:
     "border border-gray-300 bg-white text-gray-900 hover:border-[#c0897f] hover:text-[#c0897f]",
   ghost: "text-gray-900 hover:text-[#c0897f]",

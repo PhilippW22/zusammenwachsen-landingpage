@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ZusammenWachsen – Landing Page
 
-## Getting Started
+<div align="center">
+  <img src="./assets/readme/hero.jpg" width="900" alt="Hero section of the ZusammenWachsen landing page" />
+</div>
 
-First, run the development server:
+<br/>
+
+Kleine, moderne Landingpage für die ZusammenWachsen App.  
+Das Projekt dient als Web-Showcase, um meine Arbeit mit **Next.js (App Router)** und **TypeScript** zu demonstrieren.
+
+Die eigentliche Produkt- und App-Story befindet sich im [separaten App-Repository](https://github.com/PhilippW22/zusammenwachsen_app) – diese Landingpage fokussiert sich bewusst auf **Frontend-Umsetzung**, **UX-Details** und **saubere Architektur im Web**.
+
+---
+
+## 🎯 Ziel des Projekts
+
+- Umsetzung einer realen Landingpage mit **Next.js & TypeScript**
+- Übertragung eines bestehenden Produkts in einen modernen Web-Stack
+- Fokus auf **Lesbarkeit**, **Performance** und ruhige UX
+- Saubere, nachvollziehbare Code-Struktur statt Feature-Overkill
+
+---
+
+## 🛠 Tech Stack
+
+**Framework:** Next.js (App Router)  
+**Language:** TypeScript  
+**Styling:** Tailwind CSS  
+**Animation:** Framer Motion  
+**Testing:** Playwright (E2E)  
+**SEO:** Metadata, OpenGraph, Structured Data  
+**Deployment:** Vercel
+
+---
+
+## 🧠 Bewusste Entscheidungen (Auswahl)
+
+**Bottom Navigation statt klassischem Header:** Immer sichtbarer Download-CTA, mobile-first gedacht – bewusst auch auf Desktop.
+
+**Animated Counter statt klassischer Feature-Animationen:** Weniger visuelle Ablenkung, Fokus auf ruhige Informationsvermittlung.
+
+**Feste Höhen bei Testimonials:** Verhindert Layout-Shifts bei unterschiedlich langen Texten.
+
+---
+
+## 🧪 Qualität & Testing
+
+- End-to-End-Tests mit **Playwright** (Desktop & Mobile)
+- Fokus auf reale User-Flows (Navigation, FAQ, Testimonials)
+- Getestet auf Desktop und Mobile Viewports
+
+---
+
+## 📦 Lokal starten
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🌐 Live-Version
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+[https://www.zusammenwachsenapp.de](https://www.zusammenwachsenapp.de)
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 👤 Autor
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Philipp Winkler**  
+Frontend & Mobile Development
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/philipp-winkler-b959b13a0/)
 
-## Deploy on Vercel
+Dieses Projekt ist bewusst schlank gehalten und zeigt meine Arbeitsweise mit modernen Web-Technologien – ohne Anspruch auf Vollständigkeit oder Perfektion.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<div align="center">
+
+**Portfolio-Projekt** | Next.js 14 · TypeScript · Playwright | 2025
+
+</div>

@@ -1,4 +1,3 @@
-// src/app/question/[id]/page.tsx
 "use client";
 
 import { useEffect } from "react";

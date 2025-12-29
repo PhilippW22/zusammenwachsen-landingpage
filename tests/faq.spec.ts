@@ -22,7 +22,7 @@ test.describe('FAQ Section', () => {
     // Click zum Öffnen
     await firstFaqButton.click();
     
-    // Check dass Antwort sichtbar ist - ECHTER TEXT aus FAQ.tsx
+    // Check dass Antwort sichtbar ist
     const answer = page.getByText(/Wir sind Michèle und Philipp/i);
     await expect(answer).toBeVisible();
     
@@ -45,7 +45,7 @@ test.describe('FAQ Section', () => {
     const secondFaq = page.getByRole('button', { name: /Was kostet die App/i });
     await secondFaq.click();
     
-    // Beide Antworten sollten sichtbar sein - ECHTE TEXTE aus FAQ.tsx
+    // Beide Antworten sollten sichtbar sein
     const answer1 = page.getByText(/Wir sind Michèle und Philipp/i);
     const answer2 = page.getByText(/Nichts. ZusammenWachsen ist kostenlos/i);
     

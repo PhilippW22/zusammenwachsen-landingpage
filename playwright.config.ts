@@ -14,7 +14,6 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
 
-  // Nur 2 Browser: Desktop + Mobile
   projects: [
     {
       name: 'chromium',

@@ -50,7 +50,7 @@ export default function Reveal({
       transition={
         reduced
           ? undefined
-          : { duration, delay, ease: [0.22, 1, 0.36, 1] } // smooth “easeOut” curve
+          : { duration, delay, ease: [0.22, 1, 0.36, 1] }
       }
       {...props}
     >

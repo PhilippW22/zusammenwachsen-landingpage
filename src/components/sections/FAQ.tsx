@@ -51,7 +51,6 @@ function FAQItem({ item }: { item: FAQItem }) {
         <div className="flex items-center justify-between gap-4">
           <span className="font-semibold text-gray-900">{item.q}</span>
           
-          {/* Moderner SVG-Pfeil mit smooth Rotation */}
           <motion.span
             aria-hidden="true"
             className="shrink-0 text-[#c0897f]"
@@ -83,7 +82,6 @@ function FAQItem({ item }: { item: FAQItem }) {
             transition={{ duration: 0.4, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            {/* Antwort-Box */}
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}

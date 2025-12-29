@@ -80,7 +80,7 @@ export default function FeatureShowcase() {
       <div className="mt-10 space-y-6">
         {SHOWCASE.map((item, idx) => {
           const reverse = idx % 2 === 1;
-          const direction = idx % 2 === 0 ? "right" : "left"; // 1 rechts, 2 links, 3 rechts
+          const direction = idx % 2 === 0 ? "right" : "left";
 
           return (
             <Reveal key={item.title} direction={direction} delay={idx * 0.06}>
@@ -108,8 +108,8 @@ export default function FeatureShowcase() {
                       alt={item.image.alt}
                       width={900}
                       height={1800}
-                      quality={85}  // Optimale Qualität
-                      sizes="(max-width: 768px) 320px, 360px"  // Responsive
+                      quality={85}
+                      sizes="(max-width: 768px) 320px, 360px"
                       loading="lazy"
                       className="w-full h-auto rounded-2xl border"
                     />

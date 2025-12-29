@@ -36,7 +36,7 @@ const TESTIMONIALS: Testimonial[] = [
   },
 ];
 
-const AUTO_ROTATE_INTERVAL = 5000; // 5 Sekunden
+const AUTO_ROTATE_INTERVAL = 5000;
 
 function Stars({ rating }: { rating: number }) {
   return (

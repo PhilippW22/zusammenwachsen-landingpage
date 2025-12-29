@@ -88,9 +88,9 @@ export default function BottomNavBar() {
               className="
                 flex items-center gap-2
                 rounded-full
-                bg-brand-primary/50           // ← Viel transparenter!
-                backdrop-blur-md              // ← Stärkerer Blur
-                border border-white/30        // ← Subtiler Border für Glass-Look
+                bg-brand-primary/50
+                backdrop-blur-md
+                border border-white/30
                 shadow-lg
                 px-2 py-2
                 scale-[0.8]
@@ -101,14 +101,16 @@ export default function BottomNavBar() {
             >
               {/* Download button: Text wenn geschlossen, Icon wenn offen */}
               <motion.a
-                href={siteConfig.androidStoreUrl}
+                href={siteConfig.downloadUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="
                   inline-flex items-center justify-center
                   rounded-full
-                  bg-gradient-to-r from-white to-gray-200     // ← Gradient von weiß nach grau
+                  bg-gradient-to-r from-white to-gray-200
                   text-gray-900
-                  hover:scale-95                               // ← Verkleinert sich beim Hover
-                  transition-all duration-200 ease-in-out      // ← Smooth Animation
+                  hover:scale-95
+                  transition-all duration-200 ease-in-out
                   whitespace-nowrap
                   font-bold
                   shadow-sm
@@ -122,8 +124,6 @@ export default function BottomNavBar() {
               >
                 {isOpen ? <DownloadIcon /> : "Download"}
               </motion.a>
-
-              {/* Middle nav (immer gerendert, smooth reveal) */}
 <motion.div
   className="overflow-hidden"
   initial={false}
@@ -133,7 +133,7 @@ export default function BottomNavBar() {
   }}
   transition={{
     duration: 0.85,
-    ease: [0.16, 1, 0.3, 1], // "easeOutCubic"-Feeling
+    ease: [0.16, 1, 0.3, 1],
   }}
 >
   <motion.div

@@ -26,7 +26,7 @@ export default function Section({
       )}
       {...props}
     >
-      {/* Gradient-Fades für weiche Übergänge */}
+      {/* Gradient-Fades */}
       {fade !== "none" && (
         <>
           {(fade === "top" || fade === "both") && (

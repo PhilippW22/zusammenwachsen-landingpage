@@ -5,11 +5,11 @@ import { useReducedMotion } from "framer-motion";
 
 type AnimatedCounterProps = {
   end: number;
-  duration?: number;           // in ms
-  suffix?: string;             // "+", "%", etc.
-  decimals?: number;           // 0 default
-  locale?: string;             // "de-DE" default
-  once?: boolean;              // true default
+  duration?: number;
+  suffix?: string;
+  decimals?: number;
+  locale?: string;
+  once?: boolean;
   className?: string;
 };
 
@@ -71,7 +71,6 @@ export default function AnimatedCounter({
 
         if (once) observer.disconnect();
 
-        // cleanup for this run
         return () => cancelAnimationFrame(raf);
       },
       { threshold: 0.35 }
@@ -85,7 +84,6 @@ export default function AnimatedCounter({
   const display =
     decimals > 0 ? value.toFixed(decimals) : Math.round(value).toString();
 
-  // For thousands formatting, format after rounding:
   const displayNumber = formatter.format(
     decimals > 0 ? Number(display) : Number(display)
   );
