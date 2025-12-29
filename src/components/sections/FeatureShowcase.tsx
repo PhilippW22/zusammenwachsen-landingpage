@@ -20,7 +20,7 @@ const SHOWCASE: ShowcaseItem[] = [
       "Gewaltfreie Kommunikation",
     ],
     image: {
-      src: "/assets/screenshots/shot-1.png",
+      src: "/assets/screenshots/shot-1.webp",
       alt: "ZusammenWachsen – Überblick über Themen und Kategorien",
     },
   },
@@ -32,7 +32,7 @@ const SHOWCASE: ShowcaseItem[] = [
       "Gezielte Suche nach konkreten Situationen",
     ],
     image: {
-      src: "/assets/screenshots/shot-2.png",
+      src: "/assets/screenshots/shot-2.webp",
       alt: "ZusammenWachsen – Suche und Filter",
     },
   },
@@ -44,7 +44,7 @@ const SHOWCASE: ShowcaseItem[] = [
       "Schnell wiederfinden, wenn es darauf ankommt",
     ],
     image: {
-      src: "/assets/screenshots/shot-3.png",
+      src: "/assets/screenshots/shot-3.webp",
       alt: "ZusammenWachsen – Impulse und Favoriten",
     },
   },
@@ -108,6 +108,8 @@ export default function FeatureShowcase() {
                       alt={item.image.alt}
                       width={900}
                       height={1800}
+                      quality={85}  // Optimale Qualität
+                      sizes="(max-width: 768px) 320px, 360px"  // Responsive
                       loading="lazy"
                       className="w-full h-auto rounded-2xl border"
                     />

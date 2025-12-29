@@ -77,7 +77,7 @@ export default function BottomNavBar() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 14 }}
           transition={{ duration: 0.18 }}
-          className="fixed inset-x-0 bottom-4 z-50"
+          className="fixed inset-x-0 bottom-[calc(env(safe-area-inset-bottom)+16px)] z-50"
         >
           {/* Outer container centered */}
           <div className="mx-auto w-fit px-4">
