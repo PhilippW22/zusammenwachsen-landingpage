@@ -5,8 +5,8 @@ import { siteConfig } from "@/lib/site-config";
 
 export default function AppRedirectPage() {
   useEffect(() => {
-    const ua = navigator.userAgent || navigator.vendor || window.opera;
-    const isIOS = /iPad|iPhone|iPod/i.test(ua) && !window.MSStream;
+    const ua = navigator.userAgent || navigator.vendor || (window as any).opera;
+    const isIOS = /iPad|iPhone|iPod/i.test(ua) && !(window as any).MSStream;
     const isAndroid = /android/i.test(ua);
 
     if (isIOS) {
