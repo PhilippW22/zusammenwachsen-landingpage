@@ -1,0 +1,14 @@
+[
+    {
+      "relation": [
+        "delegate_permission/common.handle_all_urls"
+      ],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.zusammenwachsen.app",
+        "sha256_cert_fingerprints": [
+          "B2:6D:5B:A2:3C:1E:7E:6B:CE:EE:FC:54:61:B1:AD:FF:4F:51:FE:F5:34:F2:28:5A:44:53:E3:74:96:25:40:22"
+        ]
+      }
+    }
+  ]

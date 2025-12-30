@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "67H66Z9W84.com.zusammenwachsen.app",
+        "paths": [ "/question/*" ]
+      }
+    ]
+  }
+}
