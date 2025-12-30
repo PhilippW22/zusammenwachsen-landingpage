@@ -1,7 +1,7 @@
 # ZusammenWachsen – Landing Page
 
 <div align="center">
-  <img src="./assets/readme/hero.jpg" width="900" alt="Hero section of the ZusammenWachsen landing page" />
+  <img src="./public/assets/readme/hero.jpg" width="900" alt="Hero section of the ZusammenWachsen landing page" />
 </div>
 
 <br/>
